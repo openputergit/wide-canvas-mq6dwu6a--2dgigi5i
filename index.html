@@ -1,0 +1,1818 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ansh Realtors | Premium Bangalore Properties & Real Estate</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandRed: '#c1272d',
+                        brandDark: '#0a0a0a',
+                        brandMedium: '#141414',
+                        brandLight: '#f4f4f4',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts: Inter & DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet font-sans">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0d0d0d;
+            color: #f3f4f6;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c1272d;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Top Contact Bar -->
+    <div class="bg-brandDark border-b border-neutral-800 text-xs text-neutral-400 py-2 px-4 md:px-12 flex flex-wrap justify-between items-center gap-2">
+        <div class="flex items-center gap-6">
+            <a href="tel:7892186569" class="hover:text-brandRed transition flex items-center gap-1">
+                <i class="bi bi-telephone text-brandRed"></i> +91 78921 86569
+            </a>
+            <a href="tel:9886404680" class="hover:text-brandRed transition flex items-center gap-1">
+                <i class="bi bi-telephone text-brandRed"></i> +91 98864 04680
+            </a>
+            <a href="mailto:anshrealtorsbangalore@gmail.com" class="hover:text-brandRed transition flex items-center gap-1 hidden sm:flex">
+                <i class="bi bi-envelope text-brandRed"></i> anshrealtorsbangalore@gmail.com
+            </a>
+        </div>
+        <div class="flex items-center gap-4">
+            <span class="flex items-center gap-1 text-emerald-500 font-medium">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                Active Bangalore Listings
+            </span>
+            <button onclick="toggleElement('adminPanel')" class="text-xs text-neutral-500 hover:text-white transition flex items-center gap-1">
+                <i class="bi bi-speedometer2"></i> Lead Dashboard
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="sticky top-0 z-40 bg-brandDark/90 backdrop-blur-md border-b border-neutral-800 py-3 px-4 md:px-12 flex justify-between items-center">
+        <!-- Logo block styled exactly like wireframe / logo image -->
+        <a href="#" class="flex items-center gap-3 group">
+            <div class="relative w-40 h-16 flex items-center justify-center">
+                <svg id="svgLogo" viewBox="0 0 300 130" class="w-full h-full">
+                    <!-- Base Roof house line -->
+                    <path d="M 30,70 L 35,55 L 140,25" stroke="#c1272d" stroke-width="5" fill="none" stroke-linecap="round"/>
+                    <path d="M 140,25 L 230,67" stroke="#c1272d" stroke-width="5" fill="none" stroke-linecap="round"/>
+                    
+                    <!-- White Chimney -->
+                    <rect x="190" y="32" width="16" height="20" rx="3" fill="#e0e0e0" />
+                    
+                    <!-- Left side wall line from logo -->
+                    <path d="M 40,55 L 40,105 Q 40,115 55,115" stroke="#c1272d" stroke-width="5" stroke-linecap="round" fill="none" />
+                    <!-- Right side line that feeds the text H -->
+                    <path d="M 215,62 L 215,90" stroke="#c1272d" stroke-width="5" stroke-linecap="round" />
+
+                    <!-- Styling Hindi 'अ' + 'nsh' as logo font -->
+                    <g transform="translate(48, 65)">
+                        <!-- Hindi Letter अ representing the A -->
+                        <!-- Bar -->
+                        <path d="M 8,10 L 45,10" stroke="#c1272d" stroke-width="5.5" stroke-linecap="round" />
+                        <path d="M 40,8 L 40,52" stroke="#c1272d" stroke-width="5.5" stroke-linecap="round" />
+                        <!-- Upper loop -->
+                        <path d="M 28,10 C 13,10 13,26 28,26" stroke="#c1272d" stroke-width="5.5" fill="none" stroke-linecap="round" />
+                        <!-- Lower loop -->
+                        <path d="M 28,26 C 10,26 8,46 25,46" stroke="#c1272d" stroke-width="5.5" fill="none" stroke-linecap="round" />
+                        <!-- Center join loop -->
+                        <path d="M 24,26 L 40,26" stroke="#c1272d" stroke-width="5.5" fill="none" />
+                        
+                        <!-- nsh text -->
+                        <g transform="translate(48, 12)">
+                            <!-- n -->
+                            <path d="M 10,34 L 10,14 C 10,6 24,6 24,14 L 24,34" stroke="#c1272d" stroke-width="5.5" stroke-linecap="round" fill="none" />
+                            <!-- s -->
+                            <path d="M 32,32 C 32,36 48,32 40,24 C 32,16 48,16 44,10" stroke="#c1272d" stroke-width="5" stroke-linecap="round" fill="none" />
+                            <!-- h representing final loop of the logo's house shape -->
+                            <path d="M 58,0 L 58,34" stroke="#c1272d" stroke-width="5.5" stroke-linecap="round" />
+                            <path d="M 58,16 C 58,10 74,10 74,17 L 74,34" stroke="#c1272d" stroke-width="5.5" stroke-linecap="round" fill="none" />
+                        </g>
+                    </g>
+                    <!-- Realtors word below -->
+                    <text x="105" y="117" font-family="'Poppins', sans-serif" font-weight="600" font-size="25" fill="#e0e0e0" letter-spacing="1">Realtors</text>
+                </svg>
+            </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-7 text-sm font-medium">
+            <a href="#search" class="hover:text-brandRed transition">Find Properties</a>
+            <a href="#featured" class="hover:text-brandRed transition">Hot Deals</a>
+            <a href="#categories" class="hover:text-brandRed transition">Categories</a>
+            <a href="#ai-recommend" class="hover:text-brandRed transition text-amber-400 flex items-center gap-1 bg-amber-500/10 px-2 py-1 rounded border border-amber-500/20">
+                <i class="bi bi-cpu"></i> AI Matcher
+            </a>
+            <a href="#emi-calc" class="hover:text-brandRed transition">EMI Calculator</a>
+            <a href="#testimonials" class="hover:text-brandRed transition">Stories</a>
+            <a href="#blog" class="hover:text-brandRed transition">Real Estate Blog</a>
+        </nav>
+
+        <!-- CTAs & Mobile toggles -->
+        <div class="flex items-center gap-3">
+            <a href="https://wa.me/917892186569?text=Hi%20Ansh%20Realtors%2C%20I%20am%20interested%20in%20Bangalore%20Properties." target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-4 py-2 rounded-lg text-sm transition flex items-center gap-2">
+                <i class="bi bi-whatsapp"></i> <span class="hidden sm:inline">WhatsApp Us</span>
+            </a>
+            <button onclick="requestConsultation()" class="bg-brandRed hover:bg-red-700 text-white font-medium px-4 py-2 rounded-lg text-sm transition hidden md:block">
+                Free Consultation
+            </button>
+            <button onclick="toggleMobileMenu()" class="lg:hidden text-white text-2xl focus:outline-none">
+                <i class="bi bi-list" id="menuIcon"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden fixed inset-0 z-30 bg-brandDark/95 backdrop-blur-xl flex flex-col justify-center items-center text-center gap-6 p-6">
+        <button onclick="toggleMobileMenu()" class="absolute top-6 right-6 text-white text-3xl">
+            <i class="bi bi-x-lg"></i>
+        </button>
+        <a href="#search" onclick="toggleMobileMenu()" class="text-xl text-neutral-300 hover:text-brandRed transition">Find Properties</a>
+        <a href="#featured" onclick="toggleMobileMenu()" class="text-xl text-neutral-300 hover:text-brandRed transition">Hot Deals</a>
+        <a href="#categories" onclick="toggleMobileMenu()" class="text-xl text-neutral-300 hover:text-brandRed transition">Property Categories</a>
+        <a href="#ai-recommend" onclick="toggleMobileMenu()" class="text-xl text-amber-400 hover:text-amber-300 transition flex items-center gap-1 font-semibold">
+            <i class="bi bi-cpu"></i> AI Property Quiz
+        </a>
+        <a href="#emi-calc" onclick="toggleMobileMenu()" class="text-xl text-neutral-300 hover:text-brandRed transition">EMI Calculator</a>
+        <a href="#blog" onclick="toggleMobileMenu()" class="text-xl text-neutral-300 hover:text-brandRed transition">Property Blog</a>
+        <button onclick="toggleMobileMenu(); openLeadModal('Request Callback', 'Talk with a Premium Bangalore Property Specialist Now.');" class="bg-brandRed hover:bg-red-700 text-white font-bold px-6 py-3 rounded-lg text-md transition w-full max-w-xs">
+            Request Call back
+        </button>
+    </div>
+
+    <!-- Active Compare Floating Bar -->
+    <div id="compareBar" class="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 bg-brandMedium border border-brandRed/50 rounded-2xl shadow-2xl p-4 hidden flex items-center justify-between gap-4 w-[90%] md:w-auto max-w-2xl">
+        <div class="flex items-center gap-3">
+            <div class="bg-brandRed/20 text-brandRed rounded-full p-2 h-10 w-10 flex items-center justify-center">
+                <i class="bi bi-arrow-left-right"></i>
+            </div>
+            <div>
+                <p class="text-sm font-bold text-white"><span id="compareCount">0</span> Properties Selected</p>
+                <p class="text-xs text-neutral-400 hidden sm:block">Compare pricing, locational specifications & BHK layouts.</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-2">
+            <button onclick="clearComparison()" class="text-xs text-neutral-400 hover:text-white px-3 py-1.5 transition">Clear</button>
+            <button onclick="openCompareModal()" class="bg-brandRed hover:bg-red-700 text-white text-xs font-bold px-4 py-2 rounded-lg transition">Compare Now</button>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <div class="relative bg-gradient-to-b from-brandDark/50 to-brandDark min-h-[85vh] flex items-center justify-center py-20 px-4 md:px-12 overflow-hidden">
+        <!-- Visual Map/Grid Overlay backgrounds -->
+        <div class="absolute inset-0 z-0 opacity-20 pointer-events-none bg-[radial-gradient(#c1272d_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-brandDark to-transparent pointer-events-none z-0"></div>
+
+        <div class="max-w-6xl w-full mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-12 text-center max-w-4xl mx-auto space-y-6">
+                <!-- Promo highlight Badge -->
+                <span class="inline-flex items-center gap-1.5 bg-brandRed/10 border border-brandRed/30 text-brandRed text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider mx-auto">
+                    <i class="bi bi-patch-check-fill animate-pulse"></i> Bengaluru's Trustworthy Real Estate Brokerage
+                </span>
+                
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                    Find Your Dream Property <br class="hidden sm:inline"> Today in <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-brandRed to-orange-400">Bangalore</span>
+                </h1>
+                
+                <p class="text-sm sm:text-base md:text-lg text-neutral-300 max-w-2xl mx-auto">
+                    Ansh Realtors brings you an exclusive portfolio of premium villas, ready-to-move apartments, and profitable plot developments across fast-appreciating Hubs of Bangalore.
+                </p>
+
+                <!-- Embedded Multi-Tabs Search Bar -->
+                <div class="bg-brandMedium/90 border border-neutral-800 p-4 md:p-6 rounded-3xl shadow-2xl text-left max-w-4xl mx-auto mt-8 backdrop-blur" id="search">
+                    <div class="flex flex-wrap gap-2 mb-4 border-b border-neutral-800 pb-3">
+                        <button onclick="setSearchCategory('all')" id="tab-all" class="search-tab px-4 py-1.5 rounded-full text-xs font-semibold bg-brandRed text-white">All Properties</button>
+                        <button onclick="setSearchCategory('Villa')" id="tab-Villa" class="search-tab px-4 py-1.5 rounded-full text-xs font-semibold text-neutral-400 hover:text-white transition">Luxury Villas</button>
+                        <button onclick="setSearchCategory('Apartment')" id="tab-Apartment" class="search-tab px-4 py-1.5 rounded-full text-xs font-semibold text-neutral-400 hover:text-white transition">Apartments</button>
+                        <button onclick="setSearchCategory('Plot')" id="tab-Plot" class="search-tab px-4 py-1.5 rounded-full text-xs font-semibold text-neutral-400 hover:text-white transition">Plots & Land</button>
+                        <button onclick="setSearchCategory('Commercial')" id="tab-Commercial" class="search-tab px-4 py-1.5 rounded-full text-xs font-semibold text-neutral-400 hover:text-white transition">Commercial</button>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5">
+                        <!-- Location Dropdown -->
+                        <div class="space-y-1.5">
+                            <label class="text-xs text-neutral-400 font-medium block">Select Locality</label>
+                            <div class="relative">
+                                <i class="bi bi-geo-alt-fill absolute left-3 top-3 text-brandRed"></i>
+                                <select id="filterLocation" onchange="runLiveSearch()" class="w-full bg-neutral-900 border border-neutral-800 rounded-xl py-2.5 pl-9 pr-3 text-xs text-white focus:outline-none focus:border-brandRed transition cursor-pointer">
+                                    <option value="">All Areas (Bangalore)</option>
+                                    <option value="Whitefield">Whitefield</option>
+                                    <option value="Sarjapur Road">Sarjapur Road</option>
+                                    <option value="Indiranagar">Indiranagar</option>
+                                    <option value="Electronic City">Electronic City</option>
+                                    <option value="Yelahanka">Yelahanka</option>
+                                    <option value="Kanakapura Road">Kanakapura Road</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Budget Dropdown -->
+                        <div class="space-y-1.5">
+                            <label class="text-xs text-neutral-400 font-medium block">Max Budget</label>
+                            <div class="relative">
+                                <i class="bi bi-currency-rupee absolute left-3 top-3 text-brandRed"></i>
+                                <select id="filterBudget" onchange="runLiveSearch()" class="w-full bg-neutral-900 border border-neutral-800 rounded-xl py-2.5 pl-9 pr-3 text-xs text-white focus:outline-none focus:border-brandRed transition cursor-pointer">
+                                    <option value="">Any Budget</option>
+                                    <option value="50">Under 50 Lakhs</option>
+                                    <option value="100">Under 1 Crore</option>
+                                    <option value="200">Under 2 Crores</option>
+                                    <option value="500">Under 5 Crores</option>
+                                    <option value="1000">Luxury (5 Crores+)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- BHK Configuration -->
+                        <div class="space-y-1.5">
+                            <label class="text-xs text-neutral-400 font-medium block">BHK Flat Size</label>
+                            <div class="relative">
+                                <i class="bi bi-house-door-fill absolute left-3 top-3 text-brandRed"></i>
+                                <select id="filterBhk" onchange="runLiveSearch()" class="w-full bg-neutral-900 border border-neutral-800 rounded-xl py-2.5 pl-9 pr-3 text-xs text-white focus:outline-none focus:border-brandRed transition cursor-pointer">
+                                    <option value="">Any Configuration</option>
+                                    <option value="2">2 BHK Only</option>
+                                    <option value="3">3 BHK Only</option>
+                                    <option value="4">4 BHK & Above</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Possession status -->
+                        <div class="space-y-1.5">
+                            <label class="text-xs text-neutral-400 font-medium block">Status</label>
+                            <div class="relative">
+                                <i class="bi bi-key-fill absolute left-3 top-3 text-brandRed"></i>
+                                <select id="filterPossession" onchange="runLiveSearch()" class="w-full bg-neutral-900 border border-neutral-800 rounded-xl py-2.5 pl-9 pr-3 text-xs text-white focus:outline-none focus:border-brandRed transition cursor-pointer">
+                                    <option value="">Any Status</option>
+                                    <option value="Ready">Ready to Move</option>
+                                    <option value="New Launch">New Launch Projects</option>
+                                    <option value="Under Construction">Under Construction</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Call to Search action button -->
+                        <div class="flex items-end">
+                            <button onclick="scrollToGrid()" class="w-full bg-brandRed hover:bg-red-700 text-white font-semibold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1.5 transition shadow-lg shadow-brandRed/30">
+                                <i class="bi bi-search"></i> Find Matching
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trusted partners tags -->
+                <div class="pt-8 flex flex-wrap items-center justify-center gap-6 opacity-60 text-xs text-neutral-300">
+                    <span class="font-bold text-sm tracking-widest text-brandLight">ANSH REALTORS ADVANTAGE:</span>
+                    <span class="flex items-center gap-1"><i class="bi bi-shield-check text-brandRed"></i> 100% RERA Registered</span>
+                    <span class="flex items-center gap-1"><i class="bi bi-info-circle text-brandRed"></i> Zero Brokerage on Hot Deals</span>
+                    <span class="flex items-center gap-1"><i class="bi bi-geo-alt text-brandRed"></i> Handpicked Top Developers</span>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- CORE PROPERTY CATEGORIES GRID -->
+    <section id="categories" class="py-16 px-4 md:px-12 bg-neutral-950 border-t border-b border-neutral-900">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-xl mx-auto mb-10 space-y-2">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Invest & Settle Wisely</h2>
+                <p class="text-sm text-neutral-400">Discover properties cataloged across diverse high-performance real estate criteria designed for long-term luxury and return.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <!-- Cat 1 -->
+                <div onclick="selectCategoryTab('Villa')" class="group relative bg-[#121212] hover:bg-neutral-900 border border-neutral-800 rounded-2xl p-5 text-center cursor-pointer transition transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-brandRed/10 text-brandRed rounded-xl flex items-center justify-center mx-auto mb-4 text-xl group-hover:scale-110 transition">
+                        <i class="bi bi-gem"></i>
+                    </div>
+                    <h3 class="text-white text-sm font-bold">Luxury Villas</h3>
+                    <p class="text-xs text-neutral-500 mt-1">Independent Plots</p>
+                </div>
+                <!-- Cat 2 -->
+                <div onclick="selectCategoryTab('Apartment')" class="group relative bg-[#121212] hover:bg-neutral-900 border border-neutral-800 rounded-2xl p-5 text-center cursor-pointer transition transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-red-500/10 text-red-500 rounded-xl flex items-center justify-center mx-auto mb-4 text-xl group-hover:scale-110 transition">
+                        <i class="bi bi-building"></i>
+                    </div>
+                    <h3 class="text-white text-sm font-bold">Apartments</h3>
+                    <p class="text-xs text-neutral-500 mt-1">Spacious & Safe</p>
+                </div>
+                <!-- Cat 3 -->
+                <div onclick="selectCategoryTab('Plot')" class="group relative bg-[#121212] hover:bg-neutral-900 border border-neutral-800 rounded-2xl p-5 text-center cursor-pointer transition transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center mx-auto mb-4 text-xl group-hover:scale-110 transition">
+                        <i class="bi bi-map"></i>
+                    </div>
+                    <h3 class="text-white text-sm font-bold">Residential Plots</h3>
+                    <p class="text-xs text-neutral-500 mt-1">High Appreciating Land</p>
+                </div>
+                <!-- Cat 4 -->
+                <div onclick="selectCategoryTab('Commercial')" class="group relative bg-[#121212] hover:bg-neutral-900 border border-neutral-800 rounded-2xl p-5 text-center cursor-pointer transition transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-sky-500/10 text-sky-500 rounded-xl flex items-center justify-center mx-auto mb-4 text-xl group-hover:scale-110 transition">
+                        <i class="bi bi-shop"></i>
+                    </div>
+                    <h3 class="text-white text-sm font-bold">Commercial</h3>
+                    <p class="text-xs text-neutral-500 mt-1">Shops, Offices</p>
+                </div>
+                <!-- Cat 5 -->
+                <div onclick="setPossessionFilter('New Launch')" class="group relative bg-[#121212] hover:bg-neutral-900 border border-neutral-800 rounded-2xl p-5 text-center cursor-pointer transition transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-emerald-500/10 text-emerald-500 rounded-xl flex items-center justify-center mx-auto mb-4 text-xl group-hover:scale-110 transition">
+                        <i class="bi bi-rocket-takeoff"></i>
+                    </div>
+                    <h3 class="text-white text-sm font-bold">New Launches</h3>
+                    <p class="text-xs text-neutral-500 mt-1">Early-Bird Pricing</p>
+                </div>
+                <!-- Cat 6 -->
+                <div onclick="setPossessionFilter('Ready')" class="group relative bg-[#121212] hover:bg-neutral-900 border border-neutral-800 rounded-2xl p-5 text-center cursor-pointer transition transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-purple-500/10 text-purple-500 rounded-xl flex items-center justify-center mx-auto mb-4 text-xl group-hover:scale-110 transition">
+                        <i class="bi bi-key-fill"></i>
+                    </div>
+                    <h3 class="text-white text-sm font-bold">Ready-to-Move</h3>
+                    <p class="text-xs text-neutral-500 mt-1">Immediate Keys</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIVE SEARCH RESULTS & LISTINGS SECTION -->
+    <section id="featured" class="py-16 px-4 md:px-12 max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-10">
+            <div>
+                <span class="text-xs text-brandRed font-semibold uppercase tracking-wider block mb-1">Our Interactive Bangalore Portfolio</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Hot Projects & Exclusives</h2>
+            </div>
+            <!-- Search Stats / Sort Filter -->
+            <div class="flex items-center gap-3 w-full md:w-auto">
+                <span class="text-xs text-neutral-400 font-medium" id="search-status">Found <span id="propertyCount">0</span> Available matches</span>
+                <div class="h-6 w-[1px] bg-neutral-800 hidden md:block"></div>
+                <button onclick="resetFilters()" class="text-xs text-brandRed font-bold hover:underline transition shrink-0">Reset All Filters</button>
+            </div>
+        </div>
+
+        <!-- Property Grid Container -->
+        <div id="propertyGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Dynamically populated via JS -->
+        </div>
+
+        <!-- Empty State UI -->
+        <div id="emptyState" class="hidden text-center py-20 bg-neutral-950 border border-neutral-900 rounded-3xl p-8 max-w-md mx-auto space-y-4">
+            <i class="bi bi-search text-brandRed text-4xl block"></i>
+            <h3 class="text-lg font-bold text-white">No Properties Match Your Filter</h3>
+            <p class="text-xs text-neutral-500">We have deep connections and off-market custom properties. Send us your custom requirement directly on Whatsapp for tailored help.</p>
+            <a href="https://wa.me/917892186569?text=Hi%20Ansh%20Realtors%2C%20I%20am%20looking%20for%20other%20properties%20not%20configured%20on%20your%20site." target="_blank" class="inline-flex items-center bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-5 py-2.5 rounded-xl text-xs gap-2 transition">
+                <i class="bi bi-whatsapp"></i> Chat Real Agent
+            </a>
+        </div>
+    </section>
+
+    <!-- AI REAL ESTATE RECOMMENDATION QUIZ SECTION -->
+    <section id="ai-recommend" class="py-16 px-4 md:px-12 bg-neutral-950 border-t border-b border-neutral-900 overflow-hidden relative">
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gradient-to-tr from-brandRed/2 to-indigo-500/2 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="max-w-4xl mx-auto relative z-10">
+            <div class="text-center mb-10 space-y-2">
+                <span class="inline-flex items-center gap-1.5 bg-brandRed/10 border border-brandRed/30 text-brandRed text-xs font-semibold px-4 py-1 rounded-full uppercase tracking-wider">
+                    <i class="bi bi-cpu"></i> Automated Expert Assistant
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Smart Match Property Engine</h2>
+                <p class="text-sm text-neutral-400">Answer 3 easy questions and our AI-guided recommendation system picks the perfect layout based on budget & life priorities!</p>
+            </div>
+
+            <!-- Quiz Card Box -->
+            <div class="bg-neutral-900 border border-neutral-800 rounded-3xl shadow-2xl p-6 sm:p-10 relative">
+                <!-- Quiz Progress Bar -->
+                <div class="relative w-full h-1 bg-neutral-800 rounded-full mb-8 overflow-hidden">
+                    <div id="quizProgress" class="absolute left-0 top-0 h-full bg-brandRed transition-all duration-300 w-1/3"></div>
+                </div>
+
+                <!-- Step 1 Layout -->
+                <div id="quizStep1" class="quiz-step space-y-6">
+                    <h3 class="text-lg font-bold text-white text-center">Step 1: Where do you primarily want to buy or invest?</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-md mx-auto">
+                        <button onclick="quizSelectLocation('East')" class="quiz-btn w-full bg-neutral-950 hover:bg-neutral-800 border border-neutral-800 hover:border-brandRed p-4 rounded-xl text-left transition flex items-center justify-between">
+                            <span>⚡ East Bangalore (Whitefield, Sarjapur)</span>
+                            <i class="bi bi-arrow-right-short text-neutral-500"></i>
+                        </button>
+                        <button onclick="quizSelectLocation('South')" class="quiz-btn w-full bg-neutral-950 hover:bg-neutral-800 border border-neutral-800 hover:border-brandRed p-4 rounded-xl text-left transition flex items-center justify-between">
+                            <span>🏡 South Bangalore (Kanakapura, E-City)</span>
+                            <i class="bi bi-arrow-right-short text-neutral-500"></i>
+                        </button>
+                        <button onclick="quizSelectLocation('North')" class="quiz-btn w-full bg-neutral-950 hover:bg-neutral-800 border border-neutral-800 hover:border-brandRed p-4 rounded-xl text-left transition flex items-center justify-between">
+                            <span>✈️ North Bangalore (Yelahanka, Hebbal)</span>
+                            <i class="bi bi-arrow-right-short text-neutral-500"></i>
+                        </button>
+                        <button onclick="quizSelectLocation('Central')" class="quiz-btn w-full bg-neutral-950 hover:bg-neutral-800 border border-neutral-800 hover:border-brandRed p-4 rounded-xl text-left transition flex items-center justify-between">
+                            <span>🏢 Central Bangalore (Indiranagar)</span>
+                            <i class="bi bi-arrow-right-short text-neutral-500"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2 Layout -->
+                <div id="quizStep2" class="quiz-step hidden space-y-6">
+                    <h3 class="text-lg font-bold text-white text-center">Step 2: What is your primary luxury or style preference?</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-md mx-auto">
+                        <button onclick="quizSelectPreference('Villa')" class="quiz-btn w-full bg-neutral-950 hover:bg-neutral-800 border border-neutral-800 hover:border-brandRed p-4 rounded-xl text-left transition flex items-center justify-between">
+                            <span>🏰 Independent space & Private Garden</span>
+                            <i class="bi bi-arrow-right-short text-neutral-500"></i>
+                        </button>
+                        <button onclick="quizSelectPreference('Apartment')" class="quiz-btn w-full bg-neutral-950 hover:bg-neutral-800 border border-neutral-800 hover:border-brandRed p-4 rounded-xl text-left transition flex items-center justify-between">
+                            <span>🏙️ High-Rise Apartment with Premium Amenities</span>
+                            <i class="bi bi-arrow-right-short text-neutral-500"></i>
+                        </button>
+                        <button onclick="quizSelectPreference('Plot')" class="quiz-btn w-full bg-neutral-950 hover:bg-neutral-800 border border-neutral-800 hover:border-brandRed p-4 rounded-xl text-left transition flex items-center justify-between">
+                            <span>🌳 Strategic Land Plots for custom build</span>
+                            <i class="bi bi-arrow-right-short text-neutral-500"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3 Layout -->
+                <div id="quizStep3" class="quiz-step hidden space-y-6">
+                    <h3 class="text-lg font-bold text-white text-center">Step 3: What best details your target budget limit?</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-md mx-auto">
+                        <button onclick="quizSelectBudget('Mid')" class="quiz-btn w-full bg-neutral-950 hover:bg-neutral-800 border border-neutral-800 hover:border-brandRed p-4 rounded-xl text-left transition flex items-center justify-between">
+                            <span>🤝 Premium Mid Budget (₹60L to ₹1.2 Cr)</span>
+                            <i class="bi bi-arrow-right-short text-neutral-500 text-brandRed"></i>
+                        </button>
+                        <button onclick="quizSelectBudget('High')" class="quiz-btn w-full bg-neutral-950 hover:bg-neutral-800 border border-neutral-800 hover:border-brandRed p-4 rounded-xl text-left transition flex items-center justify-between">
+                            <span>💎 Exclusive Luxury Estate (₹1.2 Cr to ₹4.5 Cr)</span>
+                            <i class="bi bi-arrow-right-short text-neutral-500 text-brandRed"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quiz Results Step -->
+                <div id="quizResults" class="quiz-step hidden space-y-6 text-center">
+                    <div class="w-16 h-16 bg-brandRed/10 text-brandRed rounded-full flex items-center justify-center mx-auto text-2xl font-bold">
+                        <i class="bi bi-lightning-charge-fill text-brandRed"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Ideal Matched Real Estate Listings</h3>
+                    <p class="text-xs text-neutral-400 max-w-sm mx-auto">Our Real Estate recommendation highlights below matched locations for you:</p>
+                    
+                    <div id="recPropertiesArea" class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-xl mx-auto pt-4">
+                        <!-- Instantly recommended matching properties render here -->
+                    </div>
+
+                    <div class="pt-6 flex flex-wrap justify-center gap-3">
+                        <button onclick="restartQuiz()" class="text-neutral-400 hover:text-white text-xs border border-neutral-800 px-4 py-2 rounded-lg transition">Restart Engine</button>
+                        <button onclick="openLeadModal('AI Smart Consultation', 'Get complete detailed catalog of AI Chosen properties')" class="bg-brandRed hover:bg-red-700 text-white font-bold text-xs px-5 py-2.5 rounded-lg transition flex items-center gap-1">
+                            <i class="bi bi-chat-left-dots"></i> Request Consultation & Brochure
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE EMI CALCULATOR -->
+    <section id="emi-calc" class="py-16 px-4 md:px-12 max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-5 space-y-6">
+                <span class="text-xs text-brandRed font-semibold uppercase tracking-wider block">Financial Planning Made Simple</span>
+                <h2 class="text-3xl font-extrabold text-white leading-tight">Interactive Home Loan EMI Tool</h2>
+                <p class="text-sm text-neutral-400">
+                    Buying property represents the most significant investment of your lifetime. Plan monthly installments clearly according to prevailing bank interest rates (e.g. SBI, HDFC, ICICI benchmark loans).
+                </p>
+                <div class="p-5 bg-brandMedium border border-neutral-800 rounded-2xl flex items-start gap-4">
+                    <i class="bi bi-lightbulb-fill text-yellow-500 text-xl shrink-0"></i>
+                    <p class="text-xs text-neutral-300">
+                        <strong class="text-white block mb-0.5">Quick Investor Tip:</strong> 
+                        Most developers offer customized subvention schemes or pre-EMI interest models. Talk to an Ansh Realtors financial representative to compare top lending packages.
+                    </p>
+                </div>
+                <button onclick="openLeadModal('EMI Support Call Back', 'Schedule Home Loan guidance session')" class="bg-neutral-900 border border-neutral-800 text-white font-semibold text-xs px-5 py-3 rounded-xl transition flex items-center gap-2 hover:bg-neutral-800">
+                    <i class="bi bi-headset"></i> Talk to a Property Financial Expert
+                </button>
+            </div>
+
+            <!-- The Real-time Interactive Calculator Interface -->
+            <div class="lg:col-span-7 bg-[#111111] border border-neutral-800 rounded-3xl p-6 sm:p-8 space-y-6 shadow-2xl">
+                <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                    <i class="bi bi-calculator text-brandRed"></i> Estimate Your Budget Parameters
+                </h3>
+
+                <!-- Principal Range -->
+                <div class="space-y-2">
+                    <div class="flex justify-between items-center text-xs">
+                        <span class="text-neutral-400 font-medium">Loan Amount (Principal)</span>
+                        <span id="loanAmountLabel" class="text-brandRed font-bold text-sm bg-neutral-900 px-3 py-1 rounded">₹ 75 Lakhs</span>
+                    </div>
+                    <input type="range" id="inputLoanAmount" min="10" max="500" value="75" step="5" class="w-full accent-brandRed bg-neutral-800 outline-none rounded-lg h-1.5" oninput="calculateEMI()">
+                    <div class="flex justify-between text-[10px] text-neutral-500 mt-1">
+                        <span>₹10 Lakhs</span>
+                        <span>₹5 Crores</span>
+                    </div>
+                </div>
+
+                <!-- Interest Rate Percentage -->
+                <div class="space-y-2">
+                    <div class="flex justify-between items-center text-xs">
+                        <span class="text-neutral-400 font-medium">Interest rate % (Per Annum)</span>
+                        <span id="interestRateLabel" class="text-emerald-400 font-bold text-sm bg-neutral-900 px-3 py-1 rounded">8.5%</span>
+                    </div>
+                    <input type="range" id="inputInterestRate" min="5" max="15" value="8.5" step="0.1" class="w-full accent-brandRed bg-neutral-800 outline-none rounded-lg h-1.5" oninput="calculateEMI()">
+                    <div class="flex justify-between text-[10px] text-neutral-500 mt-1">
+                        <span>5.0% Min</span>
+                        <span>15.0% Max</span>
+                    </div>
+                </div>
+
+                <!-- Duration Tenure Years -->
+                <div class="space-y-2">
+                    <div class="flex justify-between items-center text-xs">
+                        <span class="text-neutral-400 font-medium">Tenure (Years)</span>
+                        <span id="loanTenureLabel" class="text-sky-400 font-bold text-sm bg-neutral-900 px-3 py-1 rounded">20 Years</span>
+                    </div>
+                    <input type="range" id="inputLoanTenure" min="5" max="30" value="20" class="w-full accent-brandRed bg-neutral-800 outline-none rounded-lg h-1.5" oninput="calculateEMI()">
+                    <div class="flex justify-between text-[10px] text-neutral-500 mt-1">
+                        <span>5 Years</span>
+                        <span>30 Years</span>
+                    </div>
+                </div>
+
+                <!-- Calculated Output Matrix Card -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 bg-neutral-950 p-4 border border-neutral-800 rounded-2xl text-center">
+                    <div class="space-y-1 p-2 border-b sm:border-b-0 sm:border-r border-neutral-800">
+                        <span class="text-[10px] text-neutral-500 uppercase font-semibold">Monthly EMI</span>
+                        <p id="outputEmi" class="text-xl font-extrabold text-white">₹ 65,103</p>
+                    </div>
+                    <div class="space-y-1 p-2 border-b sm:border-b-0 sm:border-r border-neutral-800">
+                        <span class="text-[10px] text-neutral-500 uppercase font-semibold">Total Interest</span>
+                        <p id="outputInterest" class="text-md font-bold text-neutral-300">₹ 81,24,672</p>
+                    </div>
+                    <div class="space-y-1 p-2">
+                        <span class="text-[10px] text-neutral-500 uppercase font-semibold">Total Payable</span>
+                        <p id="outputTotal" class="text-md font-bold text-neutral-300">₹ 1,56,24,672</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- GOOGLE MAPS INTEGRATION SECTION -->
+    <section class="py-16 px-4 md:px-12 bg-neutral-950 border-t border-b border-neutral-900">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                <!-- Map Sidebar guide or highlight list -->
+                <div class="lg:col-span-4 flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <span class="text-xs text-brandRed font-semibold uppercase tracking-wider block">Bangalore Micro-Markets</span>
+                        <h2 class="text-2xl font-extrabold text-white leading-snug">Elite High-Growth Location Mapping</h2>
+                        <p class="text-xs text-neutral-400">Our physical offices and current portfolio listings map directly to the high appreciation commercial & residential technology corridors of Bangalore.</p>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3 p-3 bg-neutral-900 border border-neutral-800 rounded-xl">
+                            <span class="w-8 h-8 rounded-full bg-brandRed/20 text-brandRed flex items-center justify-center text-xs font-bold">1</span>
+                            <div>
+                                <h4 class="text-xs font-bold text-white">ORR & Sarjapur Road Hubs</h4>
+                                <p class="text-[10px] text-neutral-500">Fast Tech corridor premium residences</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-neutral-900 border border-neutral-800 rounded-xl">
+                            <span class="w-8 h-8 rounded-full bg-sky-500/20 text-sky-400 flex items-center justify-center text-xs font-bold">2</span>
+                            <div>
+                                <h4 class="text-xs font-bold text-white">Whitefield ITPL Corridors</h4>
+                                <p class="text-[10px] text-neutral-500">Established corporate presence</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-neutral-900 border border-neutral-800 rounded-xl">
+                            <span class="w-8 h-8 rounded-full bg-amber-500/20 text-amber-500 flex items-center justify-center text-xs font-bold">3</span>
+                            <div>
+                                <h4 class="text-xs font-bold text-white">Yelahanka airport connectivity</h4>
+                                <p class="text-[10px] text-neutral-500">Premium Residential plots boomtown</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="text-[11px] text-neutral-500">
+                        <i class="bi bi-info-circle"></i> Looking for custom GPS pin placements on-site? Book a free chauffeur-driven site inspection mapping tour with our specialists.
+                    </p>
+                </div>
+
+                <!-- Google Map Iframe Styled wrapper -->
+                <div class="lg:col-span-8 h-[350px] lg:h-auto rounded-3xl overflow-hidden border border-neutral-850 relative group">
+                    <!-- Leaflet map embedded centered around Bangalore core -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248849.8865392437!2d77.4908520863908!3d12.9715987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                        class="w-full h-full border-none grayscale contrast-125 opacity-80 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <div class="absolute bottom-3 left-3 bg-brandDark/90 border border-neutral-800 px-3 py-1.5 rounded-lg text-[10px] text-neutral-400 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span> Portfolio Radius Active
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REAL ESTATE DEEP ADVICE BLOG SECTION -->
+    <section id="blog" class="py-16 px-4 md:px-12 max-w-6xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+            <span class="text-xs text-brandRed font-semibold uppercase tracking-wider block">Insights & Market Forecasts</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Ansh Realtors Property Journal</h2>
+            <p class="text-sm text-neutral-400">Deep, analytical literature written by dedicated research specialists to help you navigate property evaluation, documentation, and macro-market trends across Karnataka.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Article 1 -->
+            <article class="bg-[#121212] border border-neutral-800 rounded-2xl overflow-hidden flex flex-col justify-between group hover:border-brandRed/45 transition">
+                <div>
+                    <div class="relative h-44 bg-neutral-900 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80" alt="Invest Strategies" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 left-3 bg-brandRed text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">GUIDED ADVICE</span>
+                    </div>
+                    <div class="p-5 space-y-2">
+                        <span class="text-[10px] text-neutral-500"><i class="bi bi-clock"></i> March 24, 2024 &bull; 6 min read</span>
+                        <h3 class="text-sm font-bold text-white leading-snug group-hover:text-brandRed transition">10 Essential Pillars for First-Time Home Buyers in Bengaluru</h3>
+                        <p class="text-xs text-neutral-400 line-clamp-3">Understand RERA norms, Khata categorization (A-Khata vs B-Khata), occupancy validation parameters and hidden developer charges before signing property allotment agreements.</p>
+                    </div>
+                </div>
+                <div class="p-5 pt-0">
+                    <button onclick="readArticle('10 Essential Pillars for First-Time Home Buyers in Bengaluru', 'Learn how to secure secure legal representation, double-check building plan validations, trace registration titles spanning backward 30 years and avoid payment timelines defaults. Essential reading for smart investing.')" class="text-xs text-brandRed font-semibold hover:underline flex items-center gap-1">Read Article <i class="bi bi-arrow-right-short"></i></button>
+                </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="bg-[#121212] border border-neutral-800 rounded-2xl overflow-hidden flex flex-col justify-between group hover:border-brandRed/45 transition">
+                <div>
+                    <div class="relative h-44 bg-neutral-900 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=600&q=80" alt="Market Updates" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 left-3 bg-brandRed text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">MARKET TRENDS</span>
+                    </div>
+                    <div class="p-5 space-y-2">
+                        <span class="text-[10px] text-neutral-500"><i class="bi bi-clock"></i> April 02, 2024 &bull; 4 min read</span>
+                        <h3 class="text-sm font-bold text-white leading-snug group-hover:text-brandRed transition">Bengaluru Property Market Updates & Metro expansion corridors</h3>
+                        <p class="text-xs text-neutral-400 line-clamp-3">How upcoming Yellow Metro corridors and peripheral ring road routes intersect high property appreciation hotspots. Find out where commercial centers are moving.</p>
+                    </div>
+                </div>
+                <div class="p-5 pt-0">
+                    <button onclick="readArticle('Bengaluru Property Market Updates & Metro expansion corridors', 'Metro connectivity transforms raw plot values overnight. Analysis reveals premium segments along the outer ring road are shifting focus outward. Invest ahead of the infrastructure curve.')" class="text-xs text-brandRed font-semibold hover:underline flex items-center gap-1">Read Article <i class="bi bi-arrow-right-short"></i></button>
+                </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="bg-[#121212] border border-neutral-800 rounded-2xl overflow-hidden flex flex-col justify-between group hover:border-brandRed/45 transition">
+                <div>
+                    <div class="relative h-44 bg-neutral-900 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80" alt="Home Lifestyle" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 left-3 bg-brandRed text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">LIFESTYLE</span>
+                    </div>
+                    <div class="p-5 space-y-2">
+                        <span class="text-[10px] text-neutral-500"><i class="bi bi-clock"></i> April 11, 2024 &bull; 5 min read</span>
+                        <h3 class="text-sm font-bold text-white leading-snug group-hover:text-brandRed transition">Healthy Home & Lifestyle Tips for Modern Homebuyers</h3>
+                        <p class="text-xs text-neutral-400 line-clamp-3">Structuring your apartment or independent villa layout following Vastu guidelines and dynamic energy efficiency strategies. Maximize ventilation & natural light penetration.</p>
+                    </div>
+                </div>
+                <div class="p-5 pt-0">
+                    <button onclick="readArticle('Healthy Home & Lifestyle Tips for Modern Homebuyers', 'Optimize inner ventilation, prioritize smart-home water management schemes, clean air filters, and set dynamic solar pathways. Bring wellness directly inside your interior layout design.')" class="text-xs text-brandRed font-semibold hover:underline flex items-center gap-1">Read Article <i class="bi bi-arrow-right-short"></i></button>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS & TRUST SECTION -->
+    <section id="testimonials" class="py-16 px-4 md:px-12 bg-neutral-950 border-t border-neutral-900">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-xl mx-auto mb-10 space-y-2">
+                <span class="text-xs text-brandRed font-semibold uppercase tracking-wider block">Endorsements from Actual Investors</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Client Success Stories</h2>
+                <p class="text-sm text-neutral-400">Discover how premium families secured outstanding price value deals and secure transactions with Ansh Realtors.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Testimonial 1 -->
+                <div class="bg-neutral-900 border border-neutral-850 p-6 rounded-2xl flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex text-amber-500 gap-1 text-sm">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="text-xs text-neutral-300 italic">
+                            "Buying a luxury villa in Sarjapur was seamless through Ansh Realtors. They structured deep registration analysis documentation and secured zero-brokerage pricing. I recommend them highly."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-6 mt-6 border-t border-neutral-800">
+                        <div class="w-10 h-10 rounded-full bg-emerald-500 text-white font-bold flex items-center justify-center text-xs">RK</div>
+                        <div>
+                            <h4 class="text-xs font-bold text-white">Ramesh Krishnan</h4>
+                            <p class="text-[10px] text-neutral-500">Tech Lead, Infosys</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-neutral-900 border border-neutral-850 p-6 rounded-2xl flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex text-amber-500 gap-1 text-sm">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="text-xs text-neutral-300 italic">
+                            "The interactive home search filter dynamic maps made property categorization simple. Their team calculated accurate local EMI packages and matched our budget with a lovely 3BHK in Whitefield."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-6 mt-6 border-t border-neutral-800">
+                        <div class="w-10 h-10 rounded-full bg-indigo-500 text-white font-bold flex items-center justify-center text-xs">SC</div>
+                        <div>
+                            <h4 class="text-xs font-bold text-white">Sneha Chawla</h4>
+                            <p class="text-[10px] text-neutral-500">Startup Founder, HSR Layout</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-neutral-900 border border-neutral-850 p-6 rounded-2xl flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex text-amber-500 gap-1 text-sm">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="text-xs text-neutral-300 italic">
+                            "Secured premium commercial units in North Bangalore and dual residential plots. Accurate documentation and extreme transparency from start to registration. Outstanding premium agents!"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-6 mt-6 border-t border-neutral-800">
+                        <div class="w-10 h-10 rounded-full bg-red-500 text-white font-bold flex items-center justify-center text-xs">AR</div>
+                        <div>
+                            <h4 class="text-xs font-bold text-white">Austin Rodrigues</h4>
+                            <p class="text-[10px] text-neutral-500">Investor / Enterprise Builder</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HIGHEST CONVERTING FOOTER LEAD TRIGGER ACTION BAR -->
+    <section class="bg-gradient-to-tr from-brandDark through-brandMedium to-neutral-900 border-t border-neutral-800 py-16 px-4 md:px-12 text-center relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none opacity-5 bg-[radial-gradient(#c1272d_1px,transparent_1px)] [background-size:20px_20px]"></div>
+        
+        <div class="max-w-3xl mx-auto space-y-6 relative z-10">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Ready to Claim Your Place in Bangalore?</h2>
+            <p class="text-sm text-neutral-300 max-w-xl mx-auto">
+                Schedule a customized VIP showcase. We pick you up from your location, structure premium builder options and negotiate the lowest rates.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4 pt-3">
+                <button onclick="openLeadModal('Schedule VIP Site Tour', 'Free private vehicular pickup & comprehensive tour')" class="bg-brandRed hover:bg-red-700 text-white font-bold px-6 py-3.5 rounded-xl text-xs transition flex items-center gap-2 shadow-lg shadow-brandRed/30">
+                    <i class="bi bi-calendar-event"></i> Book a Free Site Visit Now
+                </button>
+                <a href="tel:7892186569" class="bg-[#1a1a1a] border border-neutral-800 hover:border-brandRed text-neutral-100 font-semibold px-6 py-3.5 rounded-xl text-xs transition flex items-center gap-2">
+                    <i class="bi bi-phone-vibrate text-brandRed animate-bounce"></i> Direct Call Expertise
+                </a>
+            </div>
+
+            <div class="pt-6 flex justify-center items-center gap-6 text-xs text-neutral-400">
+                <span class="flex items-center gap-1.5"><i class="bi bi-check-circle-fill text-brandRed"></i> No Appraisal Fees</span>
+                <span class="flex items-center gap-1.5"><i class="bi bi-check-circle-fill text-brandRed"></i> Instant Whatsapp Status Updates</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE COMPANY FOOTER -->
+    <footer class="bg-brandDark border-t border-neutral-900 pt-16 pb-8 px-4 md:px-12 text-neutral-400">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+            <!-- Brand Column -->
+            <div class="space-y-4">
+                <div class="w-48">
+                    <!-- Elegant SVG Logo scaled down -->
+                    <svg viewBox="0 0 300 130" class="w-full h-auto">
+                        <path d="M 30,70 L 35,55 L 140,25" stroke="#c1272d" stroke-width="5" fill="none" stroke-linecap="round"/>
+                        <path d="M 140,25 L 230,67" stroke="#c1272d" stroke-width="5" fill="none" stroke-linecap="round"/>
+                        <rect x="190" y="32" width="16" height="20" rx="3" fill="#e0e0e0" />
+                        <path d="M 40,55 L 40,105 Q 40,115 55,115" stroke="#c1272d" stroke-width="5" stroke-linecap="round" fill="none" />
+                        <path d="M 215,62 L 215,90" stroke="#c1272d" stroke-width="5" stroke-linecap="round" />
+                        <g transform="translate(48, 65)">
+                            <path d="M 8,10 L 45,10" stroke="#c1272d" stroke-width="5.5" stroke-linecap="round" />
+                            <path d="M 40,8 L 40,52" stroke="#c1272d" stroke-width="5.5" stroke-linecap="round" />
+                            <path d="M 28,10 C 13,10 13,26 28,26" stroke="#c1272d" stroke-width="5.5" fill="none" stroke-linecap="round" />
+                            <path d="M 28,26 C 10,26 8,46 25,46" stroke="#c1272d" stroke-width="5.5" fill="none" stroke-linecap="round" />
+                            <path d="M 24,26 L 40,26" stroke="#c1272d" stroke-width="5.5" fill="none" />
+                            <g transform="translate(48, 12)">
+                                <path d="M 10,34 L 10,14 C 10,6 24,6 24,14 L 24,34" stroke="#c1272d" stroke-width="5.5" stroke-linecap="round" fill="none" />
+                                <path d="M 32,32 C 32,36 48,32 40,24 C 32,16 48,16 44,10" stroke="#c1272d" stroke-width="5" stroke-linecap="round" fill="none" />
+                                <path d="M 58,0 L 58,34" stroke="#c1272d" stroke-width="5.5" stroke-linecap="round" />
+                                <path d="M 58,16 C 58,10 74,10 74,17 L 74,34" stroke="#c1272d" stroke-width="5.5" stroke-linecap="round" fill="none" />
+                            </g>
+                        </g>
+                        <text x="105" y="117" font-family="'Poppins', sans-serif" font-weight="600" font-size="25" fill="#e0e0e0" letter-spacing="1">Realtors</text>
+                    </svg>
+                </div>
+                <p class="text-xs text-neutral-400">
+                    Your premier, responsive gateway to the most luxury micro-markets & vetted builders layout properties in Bengaluru. High-converting expertise is our guarantee.
+                </p>
+                <div class="flex gap-3 text-lg">
+                    <a href="#" class="text-neutral-500 hover:text-white transition"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-neutral-500 hover:text-white transition"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="text-neutral-500 hover:text-white transition"><i class="bi bi-youtube"></i></a>
+                    <a href="#" class="text-neutral-500 hover:text-white transition"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+
+            <!-- Core properties Categories link Column -->
+            <div class="space-y-4">
+                <h3 class="text-white text-xs font-bold uppercase tracking-wider">Property Channels</h3>
+                <ul class="space-y-2.5 text-xs text-neutral-400">
+                    <li><a href="#categories" onclick="selectCategoryTab('Villa')" class="hover:text-brandRed transition">Premium Luxury Villas</a></li>
+                    <li><a href="#categories" onclick="selectCategoryTab('Apartment')" class="hover:text-brandRed transition">Ready Move Flats & Apartments</a></li>
+                    <li><a href="#categories" onclick="selectCategoryTab('Plot')" class="hover:text-brandRed transition">Residential Investment Plots</a></li>
+                    <li><a href="#categories" onclick="selectCategoryTab('Commercial')" class="hover:text-brandRed transition">Commercial Premium Spaces</a></li>
+                    <li><a href="#categories" onclick="setPossessionFilter('New Launch')" class="hover:text-brandRed transition">New Launches Projects</a></li>
+                </ul>
+            </div>
+
+            <!-- Quick Contacts Column -->
+            <div class="space-y-4">
+                <h3 class="text-white text-xs font-bold uppercase tracking-wider">Talk with Experts</h3>
+                <p class="text-xs text-neutral-400">Our dedicated professionals are standing by to coordinate hassle free visits.</p>
+                <div class="space-y-2 text-xs">
+                    <p class="flex items-center gap-2"><i class="bi bi-telephone text-brandRed"></i> <strong>7892186569</strong></p>
+                    <p class="flex items-center gap-2"><i class="bi bi-telephone text-brandRed"></i> <strong>9886404680</strong></p>
+                    <p class="flex items-center gap-2"><i class="bi bi-envelope text-brandRed"></i> anshrealtorsbangalore@gmail.com</p>
+                    <p class="flex items-center gap-2"><i class="bi bi-geo-alt text-brandRed"></i> Bengaluru, Karnataka, India</p>
+                </div>
+            </div>
+
+            <!-- Signup / lead capture newsletter block -->
+            <div class="space-y-4">
+                <h3 class="text-white text-xs font-bold uppercase tracking-wider">Brochure & Deals Access</h3>
+                <p class="text-xs text-neutral-400">Signup directly to secure hot early bird pricing layouts, before they reach public launch lists.</p>
+                <form onsubmit="handleNewsletterSubmit(event)" class="space-y-2">
+                    <input type="email" id="newsletterEmail" required placeholder="Enter Your Email Address" class="w-full bg-neutral-900 border border-neutral-800 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-brandRed">
+                    <button type="submit" class="w-full bg-brandRed hover:bg-red-700 text-white font-bold p-2 text-xs rounded-lg transition uppercase tracking-wider">
+                        Get Dynamic Catalog Now
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="max-w-6xl mx-auto border-t border-neutral-900 mt-12 pt-6 flex flex-col sm:flex-row justify-between items-center text-[10px] text-neutral-500 gap-4">
+            <p>&copy; 2024 Ansh Realtors (BangaloreProperties). Designed for optimal heuristic conversions. All Rights Reserved.</p>
+            <div class="flex gap-4">
+                <a href="#" class="hover:underline">Legal Terms</a>
+                <a href="#" class="hover:underline">Privacy Policy</a>
+                <a href="#" class="hover:underline">RERA Regulations Booklet</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ==================== DYNAMIC INTERACTIVE OVERLAY MODALS ==================== -->
+
+    <!-- Lead Capturing Modal System (Universal) -->
+    <div id="leadModal" class="fixed inset-0 bg-brandDark/85 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-[#121212] border border-neutral-800 w-full max-w-md rounded-3xl p-6 relative shadow-2xl">
+            <button onclick="closeLeadModal()" class="absolute top-4 right-4 text-neutral-400 hover:text-white text-xl">
+                <i class="bi bi-x-circle"></i>
+            </button>
+            <div class="text-center space-y-2 mb-6">
+                <div class="w-12 h-12 bg-brandRed/10 text-brandRed rounded-full flex items-center justify-center mx-auto text-xl">
+                    <i id="leadModalIcon" class="bi bi-chat-dots"></i>
+                </div>
+                <h3 id="leadModalTitle" class="text-lg font-bold text-white">Request Property Briefing</h3>
+                <p id="leadModalDesc" class="text-xs text-neutral-400">Schedule detailed pricing consultation</p>
+            </div>
+
+            <form onsubmit="handleLeadSubmit(event)" class="space-y-3.5">
+                <!-- Meta data trackers -->
+                <input type="hidden" id="leadMetaType" value="General Inquiry">
+                <input type="hidden" id="leadMetaTag" value="">
+
+                <div>
+                    <label class="text-[10px] uppercase font-bold text-neutral-400 tracking-wider">Full Name</label>
+                    <input type="text" id="leadName" required placeholder="John Doe" class="w-full bg-neutral-950 border border-neutral-800 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-brandRed mt-1">
+                </div>
+                <div>
+                    <label class="text-[10px] uppercase font-bold text-neutral-400 tracking-wider">Phone / WhatsApp Number</label>
+                    <input type="tel" id="leadPhone" required placeholder="7892186569" class="w-full bg-neutral-950 border border-neutral-800 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-brandRed mt-1">
+                </div>
+                <div>
+                    <label class="text-[10px] uppercase font-bold text-neutral-400 tracking-wider">Preferred Bangalore Location</label>
+                    <select id="leadLocation" class="w-full bg-neutral-950 border border-neutral-800 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-brandRed mt-1">
+                        <option value="Any Location">Any Location in Bangalore</option>
+                        <option value="Whitefield">Whitefield Zone</option>
+                        <option value="Sarjapur">Sarjapur Corridor</option>
+                        <option value="North Bangalore">North (Yelahanka/Hebbal)</option>
+                        <option value="E-City">Electronic-City</option>
+                        <option value="Commercial">Commercial / Mixed investments</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full bg-brandRed hover:bg-red-700 text-white font-bold p-3 text-xs rounded-xl transition uppercase tracking-wider mt-2 shadow-lg shadow-brandRed/25">
+                    Generate VIP Connection Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Live Property Details Modal Popup -->
+    <div id="detailsModal" class="fixed inset-0 bg-brandDark/90 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden overflow-y-auto">
+        <div class="bg-[#121212] border border-neutral-850 w-full max-w-3xl rounded-3xl overflow-hidden relative shadow-2xl my-8">
+            <button onclick="closeDetailsModal()" class="absolute top-4 right-4 z-10 bg-neutral-900/80 hover:bg-neutral-900 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm transition">
+                <i class="bi bi-x-circle"></i>
+            </button>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <!-- Left Image block -->
+                <div class="relative h-56 md:h-full bg-neutral-900 min-h-[250px]">
+                    <img id="detailImg" src="" alt="Property detail" class="w-full h-full object-cover">
+                    <span id="detailBadge" class="absolute top-4 left-4 bg-brandRed text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">HOT DEAL</span>
+                </div>
+                <!-- Right details list -->
+                <div class="p-6 md:p-8 space-y-6 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div>
+                            <span id="detailLoc" class="text-xs text-neutral-400 font-medium block"><i class="bi bi-geo-alt text-brandRed"></i> Sarjapur, Bangalore</span>
+                            <h3 id="detailTitle" class="text-xl md:text-2xl font-extrabold text-white">Prestige Sanctuary Villas</h3>
+                        </div>
+
+                        <!-- Highlights Specs -->
+                        <div class="grid grid-cols-3 gap-2.5 text-center bg-neutral-950 p-3 rounded-xl border border-neutral-850">
+                            <div class="p-1">
+                                <span class="text-[9px] text-neutral-500 uppercase font-semibold block">Config</span>
+                                <span id="detailSpecBhk" class="text-xs font-bold text-white">4 BHK</span>
+                            </div>
+                            <div class="p-1 border-x border-neutral-800">
+                                <span class="text-[9px] text-neutral-500 uppercase font-semibold block">Price Range</span>
+                                <span id="detailSpecPrice" class="text-xs font-bold text-brandRed">₹ 4.5 Cr</span>
+                            </div>
+                            <div class="p-1">
+                                <span class="text-[9px] text-neutral-500 uppercase font-semibold block">Possession</span>
+                                <span id="detailSpecStatus" class="text-xs font-bold text-white">Immediate Ready</span>
+                            </div>
+                        </div>
+
+                        <p id="detailDesc" class="text-xs text-neutral-400 leading-relaxed">
+                            Discover ultimate elite living featuring independent, modern styled layouts with lush landscaping. Perfect residential plot integration and reliable security systems.
+                        </p>
+                    </div>
+
+                    <!-- Direct Fast Lead Actions inside the modal -->
+                    <div class="space-y-2 pt-4 border-t border-neutral-800">
+                        <button onclick="requestDetailsBrochure()" class="w-full bg-brandRed hover:bg-red-700 text-white font-bold p-3 text-xs rounded-xl transition flex items-center justify-center gap-1.5 shadow-lg shadow-brandRed/20">
+                            <i class="bi bi-file-earmark-pdf"></i> Download PDF Brochure & Price Sheet
+                        </button>
+                        <div class="grid grid-cols-2 gap-2">
+                            <button id="detailCustomEnquireBtn" onclick="" class="bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 text-neutral-300 font-semibold p-2.5 text-xs rounded-xl transition">
+                                <i class="bi bi-calendar-check"></i> Book Site Visit
+                            </button>
+                            <a id="detailWhatsappBtn" href="" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold p-2.5 text-xs rounded-xl flex items-center justify-center gap-1 transition">
+                                <i class="bi bi-whatsapp"></i> Chat Agent
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Real-time Comparison Matrix Modal Overlay -->
+    <div id="compareOverlay" class="fixed inset-0 bg-brandDark/95 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden overflow-y-auto">
+        <div class="bg-[#121212] border border-neutral-800 w-full max-w-4xl rounded-3xl p-6 sm:p-8 relative shadow-2xl my-8">
+            <button onclick="closeCompareModal()" class="absolute top-4 right-4 text-neutral-400 hover:text-white text-xl">
+                <i class="bi bi-x-circle"></i>
+            </button>
+            <div class="text-center space-y-1 mb-8">
+                <h3 class="text-xl font-bold text-white">Selected Real Estate Comparison Matrix</h3>
+                <p class="text-xs text-neutral-400 font-medium">Verify layouts side-by-side to make the absolute best choice</p>
+            </div>
+
+            <!-- Comparison Table Container -->
+            <div class="overflow-x-auto">
+                <table class="w-full text-xs text-left text-neutral-300 min-w-[600px] border-collapse">
+                    <thead>
+                        <tr class="border-b border-neutral-800">
+                            <th class="py-3 px-2 font-bold text-white">PARAMETER</th>
+                            <!-- Heads will inject dynamically -->
+                            <th id="compHead1" class="py-3 px-2 text-brandRed font-bold w-1/3">Property A</th>
+                            <th id="compHead2" class="py-3 px-2 text-brandRed font-bold w-1/3">Property B</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-neutral-900">
+                        <tr>
+                            <td class="py-3 px-2 font-semibold text-neutral-400">Spec Image</td>
+                            <td class="py-3 px-2" id="compImg1">No Property</td>
+                            <td class="py-3 px-2" id="compImg2">No Property</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-2 font-semibold text-neutral-400">Project Title</td>
+                            <td class="py-3 px-2 font-bold text-white" id="compTitle1">-</td>
+                            <td class="py-3 px-2 font-bold text-white" id="compTitle2">-</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-2 font-semibold text-neutral-400">Location Hub</td>
+                            <td class="py-3 px-2" id="compLoc1">-</td>
+                            <td class="py-3 px-2" id="compLoc2">-</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-2 font-semibold text-neutral-400">Core Price Tag</td>
+                            <td class="py-3 px-2 font-bold text-emerald-400 text-sm" id="compPrice1">-</td>
+                            <td class="py-3 px-2 font-bold text-emerald-400 text-sm" id="compPrice2">-</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-2 font-semibold text-neutral-400">BHK Layout</td>
+                            <td class="py-3 px-2" id="compBhk1">-</td>
+                            <td class="py-3 px-2" id="compBhk2">-</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-2 font-semibold text-neutral-400">Year Status</td>
+                            <td class="py-3 px-2" id="compStat1">-</td>
+                            <td class="py-3 px-2" id="compStat2">-</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-2 font-semibold text-neutral-400">Project Type Tag</td>
+                            <td class="py-3 px-2" id="compType1">-</td>
+                            <td class="py-3 px-2" id="compType2">-</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-2 font-semibold text-neutral-400">Action</td>
+                            <td class="py-3 px-2" id="compAction1">-</td>
+                            <td class="py-3 px-2" id="compAction2">-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pt-6 mt-6 border-t border-neutral-850 flex justify-end gap-3">
+                <button onclick="closeCompareModal()" class="text-xs text-neutral-400 hover:text-white px-4 py-2 rounded-lg">Dismiss View</button>
+                <button onclick="openLeadModal('Direct Quote Comparison Matrix', 'Securing finalized quote comparison metrics sheet')" class="bg-brandRed hover:bg-red-700 text-white font-bold text-xs px-5 py-2.5 rounded-lg transition">Request Quotations From Builders</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Administrative Leads Captured Database Viewer Overlay -->
+    <div id="adminPanel" class="fixed inset-y-0 right-0 w-full max-w-md bg-brandMedium border-l border-neutral-800 z-50 p-6 shadow-2xl hidden flex flex-col justify-between">
+        <div>
+            <div class="flex justify-between items-center mb-6">
+                <div>
+                     <h3 class="text-md font-bold text-white flex items-center gap-1.5"><i class="bi bi-speedometer text-brandRed animate-spin"></i> Leads Dashboard Simulator</h3>
+                     <p class="text-[10px] text-neutral-500">Real-time local storage capture of customer inquiries</p>
+                </div>
+                <button onclick="toggleElement('adminPanel')" class="text-neutral-400 hover:text-white text-xl">
+                    <i class="bi bi-x-circle"></i>
+                </button>
+            </div>
+
+            <div class="space-y-3 max-h-[60vh] overflow-y-auto pr-1" id="adminLeadsList">
+                <!-- Populated instantly when leads come in -->
+            </div>
+        </div>
+
+        <div class="border-t border-neutral-800 pt-4 space-y-2">
+            <button onclick="clearAllDemoLeads()" class="w-full text-[10px] text-red-500 hover:underline text-center block">Clear Simulated Database</button>
+            <p class="text-[10px] text-neutral-500 text-center">Built custom for QA verification. Every request forms submittal updates dynamically here.</p>
+        </div>
+    </div>
+
+    <!-- Real-time Popup Alert Tracker System -->
+    <div id="alertBox" class="fixed top-20 right-4 z-50 transform translate-x-80 transition-all duration-300 bg-emerald-600 text-white font-semibold text-xs px-5 py-3 rounded-xl shadow-2xl flex items-center gap-2 pointer-events-none opacity-0">
+        <i class="bi bi-check-circle"></i> <span id="alertText">Action Generated Correctly!</span>
+    </div>
+
+    <!-- Single Blog Post Overlay Reader Modal -->
+    <div id="blogModal" class="fixed inset-0 bg-brandDark/90 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-[#121212] border border-neutral-800 w-full max-w-xl rounded-3xl p-6 sm:p-8 relative shadow-2xl">
+            <button onclick="toggleElement('blogModal')" class="absolute top-4 right-4 text-neutral-400 hover:text-white text-xl">
+                <i class="bi bi-x-circle"></i>
+            </button>
+            <div class="space-y-4">
+                <span class="text-[9px] bg-brandRed/20 text-brandRed font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Expert Insights Article</span>
+                <h3 id="blogModalTitle" class="text-xl font-bold text-white leading-snug">Article Title Placeholder</h3>
+                <p id="blogModalBody" class="text-xs text-neutral-300 leading-relaxed">Article body text rendering here.</p>
+                <div class="p-4 bg-neutral-950 rounded-xl border border-neutral-850 mt-4">
+                    <h4 class="text-xs font-bold text-white">Interested in practical Real Estate support?</h4>
+                    <p class="text-[10px] text-neutral-400 mt-1 mb-3">Our Bangalore advisory service provides accurate legal due-diligence and site valuation checkups entirely free of cost.</p>
+                    <button onclick="toggleElement('blogModal'); openLeadModal('Advice Follow-up inquiry', 'Follow-up regarding technical layout legalities')" class="bg-brandRed hover:bg-red-700 text-white font-bold text-[10px] px-4 py-2 rounded-lg transition">Speak to a Property Strategist</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ==================== JAVASCRIPT APP LOGIC ==================== -->
+    <script>
+        // MOCK DATABASE MODEL - PREMIUM BANGALORE DEVELOPER LISTINGS
+        const propertiesData = [
+            {
+                id: 1,
+                title: 'Ansh Pristine Villa',
+                type: 'Villa',
+                location: 'Sarjapur Road',
+                price: 185, // in Lakhs (1.85 Cr)
+                bhk: 4,
+                possession: 'Ready',
+                image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=600&q=80',
+                featured: true,
+                hot: true,
+                desc: 'Elite independent structure featuring a magnificent garden courtyard, robust multi-tier gated parameters, state-of-the-art sustainable water recycle infrastructure and continuous backup power grids.'
+            },
+            {
+                id: 2,
+                title: 'Royal Horizon High-Rise',
+                type: 'Apartment',
+                location: 'Whitefield',
+                price: 95, // 95 L
+                bhk: 3,
+                possession: 'New Launch',
+                image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=600&q=80',
+                featured: true,
+                hot: true,
+                desc: 'A premium apartment overlooking massive tech park greenbelt spaces with multi-lane connectivity options, large double balcony formats, exclusive structural concrete builds and full club accesses.'
+            },
+            {
+                id: 3,
+                title: 'Varthur Sunrise Acres',
+                type: 'Plot',
+                location: 'Sarjapur Road',
+                price: 55, // 55 L
+                bhk: 4, // NA - Land
+                possession: 'Ready',
+                image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80',
+                featured: false,
+                hot: false,
+                desc: 'High layout potential plot with immediate registration availability options, underground wiring lines and concrete entry ways. Fast commercial appreciation parameters guaranteed.'
+            },
+            {
+                id: 4,
+                title: 'Indiranagar Prestige Plaza',
+                type: 'Commercial',
+                location: 'Indiranagar',
+                price: 650, // 6.5 Cr
+                bhk: 4, 
+                possession: 'Ready',
+                image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80',
+                featured: true,
+                hot: false,
+                desc: 'Rare premium multi-floor showroom property located in high-density corporate hub areas. Continuous footfall guarantees high renting yield indicators across timelines.'
+            },
+            {
+                id: 5,
+                title: 'Yelahanka Aviator Plots',
+                type: 'Plot',
+                location: 'Yelahanka',
+                price: 110, // 1.1 Cr
+                bhk: 3, 
+                possession: 'Ready',
+                image: 'https://images.unsplash.com/photo-1524813686514-a57563d77965?auto=format&fit=crop&w=600&q=80',
+                featured: false,
+                hot: true,
+                desc: 'RERA integrated luxury plotted park. Located minutes from the expressway, utilizing internal high wide main paths, robust high wall structures, and high natural flora integrations.'
+            },
+            {
+                id: 6,
+                title: 'Electronic City Oasis',
+                type: 'Apartment',
+                location: 'Electronic City',
+                price: 72, // 72 L
+                bhk: 2,
+                possession: 'Under Construction',
+                image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80',
+                featured: true,
+                hot: false,
+                desc: 'Value optimized, spacious high quality apartment build options centering the IT Hub. Easy financial access SBI preapproved lines and massive multi sport court zones.'
+            },
+            {
+                id: 7,
+                title: 'Kanakapura Riverfront Mansions',
+                type: 'Villa',
+                location: 'Kanakapura Road',
+                price: 320, // 3.2 Cr
+                bhk: 4,
+                possession: 'New Launch',
+                image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80',
+                featured: true,
+                hot: true,
+                desc: 'Premium sustainable ultra-villa overlooking tranquil natural boundaries. Solar grid arrays fitted, fully personal swimming features integrated, immediate booking discounts available.'
+            }
+        ];
+
+        // Global Active Filters State
+        let activeCategory = 'all';
+        let compareList = [];
+
+        // INITIALIZATION
+        window.addEventListener('DOMContentLoaded', () => {
+            renderPropertiesTab(propertiesData);
+            calculateEMI();
+            runLiveSearch();
+            renderLeadsToAdmin();
+        });
+
+        // Toggle elements generic helper
+        function toggleElement(id) {
+            const el = document.getElementById(id);
+            if(el) el.classList.toggle('hidden');
+        }
+
+        // Mobile Menu controller
+        let mobileMenuOpen = false;
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('menuIcon');
+            mobileMenuOpen = !mobileMenuOpen;
+            if (mobileMenuOpen) {
+                menu.classList.remove('hidden');
+                icon.className = 'bi bi-x-lg';
+            } else {
+                menu.classList.add('hidden');
+                icon.className = 'bi bi-list';
+            }
+        }
+
+        // Search Category Quick Tab
+        function setSearchCategory(category) {
+            activeCategory = category;
+            
+            // Adjust CSS highlight states
+            document.querySelectorAll('.search-tab').forEach(btn => {
+                btn.className = "search-tab px-4 py-1.5 rounded-full text-xs font-semibold text-neutral-400 hover:text-white transition";
+            });
+            
+            const activeTab = document.getElementById('tab-' + category);
+            if (activeTab) {
+                activeTab.className = "search-tab px-4 py-1.5 rounded-full text-xs font-semibold bg-brandRed text-white";
+            }
+            
+            runLiveSearch();
+        }
+
+        // Categorization click redirection
+        function selectCategoryTab(type) {
+            setSearchCategory(type);
+            scrollToGrid();
+        }
+
+        // Set possession status specifically
+        function setPossessionFilter(status) {
+            document.getElementById('filterPossession').value = status;
+            runLiveSearch();
+            scrollToGrid();
+        }
+
+        function scrollToGrid() {
+            document.getElementById('featured').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function resetFilters() {
+            document.getElementById('filterLocation').value = "";
+            document.getElementById('filterBudget').value = "";
+            document.getElementById('filterBhk').value = "";
+            document.getElementById('filterPossession').value = "";
+            setSearchCategory('all');
+            showAlert("Success", "All search specifications reset");
+        }
+
+        // LIVE CORE SEARCH LOGIC ENGINE
+        function runLiveSearch() {
+            const area = document.getElementById('filterLocation').value;
+            const maxBudget = document.getElementById('filterBudget').value;
+            const bhk = document.getElementById('filterBhk').value;
+            const status = document.getElementById('filterPossession').value;
+
+            const filtered = propertiesData.filter(prop => {
+                // Category match
+                if (activeCategory !== 'all' && prop.type !== activeCategory) return false;
+                // Area match
+                if (area && prop.location !== area) return false;
+                // Budget calculation match
+                if (maxBudget) {
+                    const parsedBudget = parseInt(maxBudget);
+                    if (parsedBudget === 1000) {
+                        if (prop.price < 500) return false;
+                    } else {
+                        if (prop.price > parsedBudget) return false;
+                    }
+                }
+                // BHK match
+                if (bhk) {
+                    const parsedBhk = parseInt(bhk);
+                    if (parsedBhk === 4) {
+                        if (prop.bhk < 4) return false;
+                    } else {
+                        if (prop.bhk !== parsedBhk) return false;
+                    }
+                }
+                // Possession Status match
+                if (status && prop.possession !== status) return false;
+
+                return true;
+            });
+
+            renderPropertiesTab(filtered);
+
+            // Update Statistics
+            document.getElementById('propertyCount').innerText = filtered.length;
+            const emptyState = document.getElementById('emptyState');
+            if (filtered.length === 0) {
+                emptyState.classList.remove('hidden');
+            } else {
+                emptyState.classList.add('hidden');
+            }
+        }
+
+        // RENDER PROPERTIES CORE FUNCTION
+        function renderPropertiesTab(list) {
+            const grid = document.getElementById('propertyGrid');
+            grid.innerHTML = "";
+
+            list.forEach(prop => {
+                // Convert price format
+                const formattedPrice = prop.price >= 100 
+                    ? `₹ ${(prop.price / 100).toFixed(2)} Crore` 
+                    : `₹ ${prop.price} Lakhs`;
+
+                const isComparing = compareList.includes(prop.id);
+
+                const cardHtml = `
+                    <div class="bg-[#121212] border border-neutral-850 rounded-2xl overflow-hidden group hover:border-brandRed/50 transition duration-300 flex flex-col justify-between relative">
+                        <!-- Top Image Block -->
+                        <div class="relative h-56 bg-neutral-900 overflow-hidden cursor-pointer" onclick="openDetails(${prop.id})">
+                            <img src="${prop.image}" alt="${prop.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            
+                            <!-- Badges -->
+                            <div class="absolute top-3 left-3 flex flex-col gap-1">
+                                ${prop.hot ? '<span class="bg-brandRed text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded shadow">HOT DEAL</span>' : ''}
+                                <span class="bg-black/70 backdrop-blur text-[8px] text-neutral-300 font-semibold px-2 py-0.5 rounded">${prop.possession}</span>
+                            </div>
+
+                            <span class="absolute bottom-3 right-3 bg-black/80 backdrop-blur-md text-white font-bold text-xs px-3 py-1 rounded-lg">
+                                ${formattedPrice}
+                            </span>
+                        </div>
+
+                        <!-- Info Content -->
+                        <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                            <div class="space-y-1.5 cursor-pointer" onclick="openDetails(${prop.id})">
+                                <span class="text-[10px] text-neutral-400 font-bold tracking-tight inline-flex items-center gap-1">
+                                    <i class="bi bi-geo-alt-fill text-brandRed"></i> ${prop.location}
+                                </span>
+                                <h3 class="text-sm font-extrabold text-white group-hover:text-brandRed transition leading-tight">${prop.title}</h3>
+                                <p class="text-[11px] text-neutral-400 line-clamp-2">${prop.desc}</p>
+                            </div>
+
+                            <!-- Structural spec badges -->
+                            <div class="flex items-center gap-4 text-[10px] text-neutral-400 font-medium py-2 border-t border-b border-neutral-900">
+                                <span class="flex items-center gap-1 shrink-0"><i class="bi bs-house text-brandRed"></i> ${prop.type}</span>
+                                <span class="flex items-center gap-1 shrink-0"><i class="bi bi-square-half text-brandRed"></i> ${prop.bhk} BHK Configuration</span>
+                            </div>
+
+                            <!-- CTAs & Comparison check -->
+                            <div class="space-y-2 pt-2">
+                                <button onclick="toggleCompare(${prop.id})" class="w-full text-[10px] text-neutral-400 hover:text-white border border-neutral-850 hover:border-neutral-700 py-2 rounded-lg transition flex items-center justify-center gap-1">
+                                    <i class="bi ${isComparing ? 'bi-check-circle-fill text-brandRed' : 'bi-arrow-left-right'}"></i> 
+                                    ${isComparing ? 'In Compare List' : 'Add to Compare'}
+                                </button>
+                                
+                                <div class="grid grid-cols-2 gap-2">
+                                    <button onclick="openLeadModal('Instant Enquiry for ${prop.title}', 'Direct builder pricing inquiry for property: ${prop.title}')" class="bg-brandRed hover:bg-red-700 text-white font-bold p-2 text-[10px] rounded-lg transition text-center uppercase tracking-wide">
+                                        Enquire Now
+                                    </button>
+                                    <a href="https://wa.me/917892186569?text=Hi%20Ansh%20Realtors%2C%20I%27m%20interested%20in%20details%20for%20${encodeURIComponent(prop.title)}%20near%20${encodeURIComponent(prop.location)}." target="_blank" class="bg-neutral-900 border border-neutral-800 hover:bg-neutral-800 text-emerald-500 font-bold p-2 text-[10px] rounded-lg transition flex items-center justify-center gap-1 uppercase tracking-wide">
+                                        <i class="bi bi-whatsapp"></i> Chat
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                `;
+                grid.innerHTML += cardHtml;
+            });
+        }
+
+        // DYNAMIC DETAILS POPUP MODAL HOOK
+        function openDetails(id) {
+            const prop = propertiesData.find(p => p.id === id);
+            if (!prop) return;
+
+            const formattedPrice = prop.price >= 100 
+                ? `₹ ${(prop.price / 100).toFixed(2)} Crore` 
+                : `₹ ${prop.price} Lakhs`;
+
+            document.getElementById('detailImg').src = prop.image;
+            document.getElementById('detailLoc').innerHTML = `<i class="bi bi-geo-alt-fill text-brandRed"></i> ${prop.location}, Bangalore`;
+            document.getElementById('detailTitle').innerText = prop.title;
+            document.getElementById('detailSpecBhk').innerText = `${prop.bhk} BHK Layout`;
+            document.getElementById('detailSpecPrice').innerText = formattedPrice;
+            document.getElementById('detailSpecStatus').innerText = prop.possession;
+            document.getElementById('detailDesc').innerText = prop.desc;
+
+            // Update CTA pointers specifically mapping to the chosen listing
+            document.getElementById('detailCustomEnquireBtn').setAttribute('onclick', `closeDetailsModal(); openLeadModal('Book Site Visit - ${prop.title}', 'Reserve personalized scheduling block for site review: ${prop.title}');`);
+            document.getElementById('detailWhatsappBtn').href = `https://wa.me/917892186569?text=Hi%20Ansh%20Realtors%2C%20I'm%20very%20interested%20in%20${encodeURIComponent(prop.title)}.%20Send%20current%20pricing%20schedule.`;
+
+            const modal = document.getElementById('detailsModal');
+            modal.classList.remove('hidden');
+        }
+
+        function closeDetailsModal() {
+            document.getElementById('detailsModal').classList.add('hidden');
+        }
+
+        // TWO-PROPERTY COMPARISON TOOL LOGIC
+        function toggleCompare(id) {
+            if (compareList.includes(id)) {
+                compareList = compareList.filter(item => item !== id);
+                showAlert("Success", "Removed from comparison list");
+            } else {
+                if (compareList.length >= 2) {
+                    showAlert("Warning", "We support comparing max. 2 listings side-by-side. Remove another first.");
+                    return;
+                }
+                compareList.push(id);
+                showAlert("Success", "Added to comparison list");
+            }
+
+            // Sync visual bar updates
+            const compareBar = document.getElementById('compareBar');
+            const countLabel = document.getElementById('compareCount');
+            
+            if (compareList.length > 0) {
+                compareBar.classList.remove('hidden');
+                countLabel.innerText = compareList.length;
+            } else {
+                compareBar.classList.add('hidden');
+            }
+
+            // Re-render properties so compare checkmarks update
+            runLiveSearch();
+        }
+
+        function clearComparison() {
+            compareList = [];
+            document.getElementById('compareBar').classList.add('hidden');
+            runLiveSearch();
+            showAlert("Success", "Comparison matrix cleared");
+        }
+
+        function openCompareModal() {
+            if (compareList.length < 1) return;
+
+            const modal = document.getElementById('compareOverlay');
+            modal.classList.remove('hidden');
+
+            const p1 = propertiesData.find(p => p.id === compareList[0]);
+            const p2 = propertiesData.find(p => p.id === compareList[1]);
+
+            // Set Column Head Names
+            document.getElementById('compHead1').innerText = p1 ? p1.title : "No Property Selected";
+            document.getElementById('compHead2').innerText = p2 ? p2.title : "No Property Selected";
+
+            // Render details Row by Row
+            if (p1) {
+                document.getElementById('compImg1').innerHTML = `<img src="${p1.image}" class="w-20 h-14 object-cover rounded">`;
+                document.getElementById('compTitle1').innerText = p1.title;
+                document.getElementById('compLoc1').innerText = p1.location;
+                document.getElementById('compPrice1').innerText = p1.price >= 100 ? `₹ ${(p1.price / 100).toFixed(2)} Cr` : `₹ ${p1.price} L`;
+                document.getElementById('compBhk1').innerText = `${p1.bhk} BHK Layout`;
+                document.getElementById('compStat1').innerText = p1.possession;
+                document.getElementById('compType1').innerText = p1.type;
+                document.getElementById('compAction1').innerHTML = `<button onclick="closeCompareModal(); openLeadModal('Compare Inquiry: ${p1.title}', 'Detailed quotes breakdown')" class="bg-brandRed text-[10px] text-white px-2.5 py-1 rounded font-bold">Request Deal Price</button>`;
+            } else {
+                clearCompareRowElements(1);
+            }
+
+            if (p2) {
+                document.getElementById('compImg2').innerHTML = `<img src="${p2.image}" class="w-20 h-14 object-cover rounded">`;
+                document.getElementById('compTitle2').innerText = p2.title;
+                document.getElementById('compLoc2').innerText = p2.location;
+                document.getElementById('compPrice2').innerText = p2.price >= 100 ? `₹ ${(p2.price / 100).toFixed(2)} Cr` : `₹ ${p2.price} L`;
+                document.getElementById('compBhk2').innerText = `${p2.bhk} BHK Layout`;
+                document.getElementById('compStat2').innerText = p2.possession;
+                document.getElementById('compType2').innerText = p2.type;
+                document.getElementById('compAction2').innerHTML = `<button onclick="closeCompareModal(); openLeadModal('Compare Inquiry: ${p2.title}', 'Detailed quotes breakdown')" class="bg-brandRed text-[10px] text-white px-2.5 py-1 rounded font-bold">Request Deal Price</button>`;
+            } else {
+                clearCompareRowElements(2);
+            }
+        }
+
+        function clearCompareRowElements(colIndex) {
+            document.getElementById(`compImg${colIndex}`).innerText = "Empty Slot";
+            document.getElementById(`compTitle${colIndex}`).innerText = "-";
+            document.getElementById(`compLoc${colIndex}`).innerText = "-";
+            document.getElementById(`compPrice${colIndex}`).innerText = "-";
+            document.getElementById(`compBhk${colIndex}`).innerText = "-";
+            document.getElementById(`compStat${colIndex}`).innerText = "-";
+            document.getElementById(`compType${colIndex}`).innerText = "-";
+            document.getElementById(`compAction${colIndex}`).innerText = "-";
+        }
+
+        function closeCompareModal() {
+            document.getElementById('compareOverlay').classList.add('hidden');
+        }
+
+
+        // MATHEMATICAL HOME LOAN EMI CALCULATOR
+        function calculateEMI() {
+            const principalLakhs = parseFloat(document.getElementById('inputLoanAmount').value);
+            const ratePerAnnum = parseFloat(document.getElementById('inputInterestRate').value);
+            const tenureYears = parseInt(document.getElementById('inputLoanTenure').value);
+
+            // Conversion factors
+            const P = principalLakhs * 100000; // to real Rupees
+            const r = (ratePerAnnum / 12) / 100; // monthly rate
+            const n = tenureYears * 12; // monthly tenure
+
+            // Label UI rendering 
+            document.getElementById('loanAmountLabel').innerText = principalLakhs >= 100 
+                ? `₹ ${(principalLakhs / 100).toFixed(2)} Crore` 
+                : `₹ ${principalLakhs} Lakhs`;
+            document.getElementById('interestRateLabel').innerText = `${ratePerAnnum.toFixed(1)}%`;
+            document.getElementById('loanTenureLabel').innerText = `${tenureYears} Years`;
+
+            // Formula: EMI = [P x r x (1+r)^n]/[((1+r)^n)-1]
+            const compoundingVal = Math.pow(1 + r, n);
+            const rawEmi = (P * r * compoundingVal) / (compoundingVal - 1);
+            
+            const emi = Math.round(rawEmi);
+            const totalRepay = emi * n;
+            const totalInterest = totalRepay - P;
+
+            // Formatted String output
+            document.getElementById('outputEmi').innerText = `₹ ${emi.toLocaleString('en-IN')}`;
+            document.getElementById('outputInterest').innerText = `₹ ${totalInterest.toLocaleString('en-IN')}`;
+            document.getElementById('outputTotal').innerText = `₹ ${totalRepay.toLocaleString('en-IN')}`;
+        }
+
+
+        // AI SMART MATCH REAL ESTATE RECOMMENDER ENGINE
+        let quizState = {
+            location: '',
+            preference: '',
+            budget: ''
+        };
+
+        function quizSelectLocation(loc) {
+            quizState.location = loc;
+            document.getElementById('quizStep1').classList.add('hidden');
+            document.getElementById('quizStep2').classList.remove('hidden');
+            document.getElementById('quizProgress').style.width = '66%';
+        }
+
+        function quizSelectPreference(pref) {
+            quizState.preference = pref;
+            document.getElementById('quizStep2').classList.add('hidden');
+            document.getElementById('quizStep3').classList.remove('hidden');
+            document.getElementById('quizProgress').style.width = '100%';
+        }
+
+        function quizSelectBudget(budget) {
+            quizState.budget = budget;
+            document.getElementById('quizStep3').classList.add('hidden');
+            document.getElementById('quizResults').classList.remove('hidden');
+            generateAIRecommendations();
+        }
+
+        function restartQuiz() {
+            quizState = { location: '', preference: '', budget: '' };
+            document.getElementById('quizResults').classList.add('hidden');
+            document.getElementById('quizStep1').classList.remove('hidden');
+            document.getElementById('quizProgress').style.width = '33%';
+        }
+
+        function generateAIRecommendations() {
+            const container = document.getElementById('recPropertiesArea');
+            container.innerHTML = "";
+
+            // Narrow list based on matching inputs from mock structures
+            let matches = propertiesData;
+
+            // Match Location priorities
+            if (quizState.location === 'East') {
+                matches = matches.filter(p => p.location.includes('Sarjapur') || p.location.includes('Whitefield'));
+            } else if (quizState.location === 'South') {
+                matches = matches.filter(p => p.location.includes('Kanakapura') || p.location.includes('Electronic'));
+            } else if (quizState.location === 'North') {
+                matches = matches.filter(p => p.location.includes('Yelahanka'));
+            } else {
+                matches = matches.filter(p => p.location.includes('Indiranagar'));
+            }
+
+            // Match Type Preference
+            let typeMatches = matches.filter(p => p.type === quizState.preference);
+            if (typeMatches.length > 0) matches = typeMatches;
+
+            // Reduce to max 2 items
+            const matchesToRender = matches.slice(0, 2);
+
+            matchesToRender.forEach(prop => {
+                const formattedPrice = prop.price >= 100 
+                    ? `₹ ${(prop.price / 100).toFixed(2)} Crore` 
+                    : `₹ ${prop.price} Lakhs`;
+
+                const recCard = `
+                    <div class="bg-neutral-950 p-4 rounded-xl border border-neutral-800 text-left space-y-2">
+                        <img src="${prop.image}" class="w-full h-24 object-cover rounded-lg">
+                        <div>
+                            <span class="text-[9px] text-brandRed font-semibold uppercase">${prop.location}</span>
+                            <h4 class="text-xs font-bold text-white truncate">${prop.title}</h4>
+                            <p class="text-[10px] text-emerald-400 font-extrabold uppercase mt-1">${formattedPrice}</p>
+                        </div>
+                        <button onclick="openDetails(${prop.id})" class="w-full bg-brandRed/20 hover:bg-brandRed text-neutral-300 hover:text-white transition duration-300 p-2 text-[9px] font-bold rounded-lg uppercase">
+                            Open Details Catalog
+                        </button>
+                    </div>
+                `;
+                container.innerHTML += recCard;
+            });
+
+            if (matchesToRender.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-2 text-center py-4 text-xs text-neutral-400">
+                        No structural properties matched your specific micro-metrics perfectly. But we carry off-market inventory customized layout specifications!
+                    </div>
+                `;
+            }
+        }
+
+
+        // HIGH QUALITY LEAD CAPTURE & RECRUIT SYSTEM HOOKS
+        function openLeadModal(title, description, queryTag = "Custom Form Submission") {
+            document.getElementById('leadModalTitle').innerText = title;
+            document.getElementById('leadModalDesc').innerText = description;
+            document.getElementById('leadMetaType').value = title;
+            document.getElementById('leadMetaTag').value = queryTag;
+
+            // Adjust specific aesthetic matching theme
+            const modal = document.getElementById('leadModal');
+            modal.classList.remove('hidden');
+        }
+
+        function closeLeadModal() {
+            document.getElementById('leadModal').classList.add('hidden');
+        }
+
+        function requestConsultation() {
+            openLeadModal(
+                'Get Free Expert Advisory Consultation', 
+                'Zero-brokerage, transparent developer metrics legal checks on top options.',
+                'Navbar Header Consultation Form'
+            );
+        }
+
+        function requestDetailsBrochure() {
+            closeDetailsModal();
+            openLeadModal(
+                'Request Brokerage Brochure & Price Schedule', 
+                'Deliver SMS + email catalog instantly containing comprehensive layout blueprints.',
+                'PDF Brochure Download Trigger'
+            );
+        }
+
+        // Live Simulated Leads Storage Engine
+        function handleLeadSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('leadName').value;
+            const phone = document.getElementById('leadPhone').value;
+            const location = document.getElementById('leadLocation').value;
+            const activityType = document.getElementById('leadMetaType').value;
+            const contextTag = document.getElementById('leadMetaTag').value;
+
+            const leadObj = {
+                id: Date.now(),
+                name,
+                phone,
+                location,
+                activityType,
+                contextTag,
+                timestamp: new Date().toLocaleString()
+            };
+
+            // Retrieve and append to dynamic local storage array
+            let existingLeads = JSON.parse(localStorage.getItem('ansh_realtor_leads')) || [];
+            existingLeads.unshift(leadObj);
+            localStorage.setItem('ansh_realtor_leads', JSON.stringify(existingLeads));
+
+            // Reset inputs
+            document.getElementById('leadName').value = "";
+            document.getElementById('leadPhone').value = "";
+
+            closeLeadModal();
+            showAlert("Success", "VIP Inquiry Recorded. Simulated alert dispatched to Ansh Realtors agents!");
+            renderLeadsToAdmin();
+
+            // Auto-redirect simulation to WhatsApp for immediate high-conversional rate response
+            setTimeout(() => {
+                const messageText = `Hi Ansh Realtors, my name is ${name}. I just registered an inquiry on your portal for ${activityType} (${location}). Please connect me with the developer point person.`;
+                window.open(`https://wa.me/917892186569?text=${encodeURIComponent(messageText)}`, '_blank');
+            }, 1000);
+        }
+
+        function handleNewsletterSubmit(e) {
+            e.preventDefault();
+            const email = document.getElementById('newsletterEmail').value;
+            showAlert("Subscribed", "Newsletter active. Delivering weekly layouts catalog to " + email);
+            
+            let existingLeads = JSON.parse(localStorage.getItem('ansh_realtor_leads')) || [];
+            existingLeads.unshift({
+                id: Date.now(),
+                name: "Newsletter Subscriber",
+                phone: email,
+                location: "All Bangalore",
+                activityType: "Newsletter Catalog Signup",
+                contextTag: "Footer newsletter",
+                timestamp: new Date().toLocaleString()
+            });
+            localStorage.setItem('ansh_realtor_leads', JSON.stringify(existingLeads));
+            document.getElementById('newsletterEmail').value = "";
+            renderLeadsToAdmin();
+        }
+
+        // ADMINISTRATIVE LEADS LIVE VIEWER SIMULATOR
+        function renderLeadsToAdmin() {
+            const listContainer = document.getElementById('adminLeadsList');
+            if(!listContainer) return;
+
+            const leads = JSON.parse(localStorage.getItem('ansh_realtor_leads')) || [];
+            listContainer.innerHTML = "";
+
+            if (leads.length === 0) {
+                listContainer.innerHTML = `
+                    <div class="text-center py-10 border border-dashed border-neutral-800 rounded-xl p-4">
+                        <p class="text-xs text-neutral-500">No leads captured yet.</p>
+                        <p class="text-[10px] text-neutral-600 mt-1">Submit property listings requests or calculate EMI to populate simulation databases instantly.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            leads.forEach(lead => {
+                const item = `
+                    <div class="border border-neutral-800 bg-neutral-950 rounded-xl p-3.5 space-y-1">
+                        <div class="flex justify-between items-start">
+                            <span class="text-[9px] bg-brandRed/20 text-brandRed font-bold px-2 py-0.5 rounded">${lead.activityType}</span>
+                            <span class="text-[8px] text-neutral-500">${lead.timestamp}</span>
+                        </div>
+                        <h4 class="text-xs text-white font-extrabold mt-1">${lead.name}</h4>
+                        <p class="text-xs text-neutral-300">📞 ${lead.phone}</p>
+                        <p class="text-[10px] text-neutral-400">Target Segment: ${lead.location}</p>
+                        <p class="text-[9px] text-neutral-550 border-t border-neutral-900 mt-2 pt-1 font-mono">Source tag: ${lead.contextTag}</p>
+                    </div>
+                `;
+                listContainer.innerHTML += item;
+            });
+        }
+
+        function clearAllDemoLeads() {
+            localStorage.removeItem('ansh_realtor_leads');
+            renderLeadsToAdmin();
+            showAlert("Cleared", "Simulation Database Cleaned successfully");
+        }
+
+        // ALERT POPUP TRIGGERS
+        function showAlert(type, message) {
+            const alertBox = document.getElementById('alertBox');
+            const alertText = document.getElementById('alertText');
+            
+            alertText.innerText = `[${type}] - ${message}`;
+            alertBox.classList.remove('opacity-0', 'translate-x-80');
+            
+            // Slide in animation
+            alertBox.classList.add('opacity-100', 'translate-x-0');
+            
+            setTimeout(() => {
+                alertBox.classList.remove('opacity-100', 'translate-x-0');
+                alertBox.classList.add('opacity-0', 'translate-x-80');
+            }, 4500);
+        }
+
+        // READ JOURNAL ARTICLES ACTION
+        function readArticle(title, body) {
+            document.getElementById('blogModalTitle').innerText = title;
+            document.getElementById('blogModalBody').innerText = body;
+            toggleElement('blogModal');
+        }
+    </script>
+<script>document.body.addEventListener('wheel', e => { if (!e.ctrlKey) return; e.preventDefault(); return }, { passive: false })</script>
+	</body>
+</html>
